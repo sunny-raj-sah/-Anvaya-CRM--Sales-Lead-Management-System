@@ -38,35 +38,55 @@ const Sidebar = ({ mobile = false }) => {
      MOBILE BOTTOM NAVIGATION
   ========================= */
 
-  if (mobile) {
-    return (
-      <nav className="d-flex justify-content-around align-items-center py-2">
+  // if (mobile) {
+  //   return (
+  //     <nav className="d-flex justify-content-around align-items-center py-2">
 
-        {menuItems.map((item) => (
-          <NavLink
-            key={item.path}
-            to={item.path}
-            end={item.path === "/"}
-            className={({ isActive }) =>
-              `text-decoration-none text-center ${
-                isActive ? "text-primary" : "text-white"
-              }`
-            }
-          >
-            <div className="fs-5">
-              {item.icon}
-            </div>
+  //       {menuItems.map((item) => (
+  //         <NavLink
+  //           key={item.path}
+  //           to={item.path}
+  //           end={item.path === "/"}
+  //           className={({ isActive }) =>
+  //             `text-decoration-none text-center ${
+  //               isActive ? "text-primary" : "text-white"
+  //             }`
+  //           }
+  //         >
+  //           <div className="fs-5">
+  //             {item.icon}
+  //           </div>
 
-            <small>
-              {item.shortTitle}
-            </small>
-          </NavLink>
-        ))}
+  //           <small>
+  //             {item.shortTitle}
+  //           </small>
+  //         </NavLink>
+  //       ))}
 
-      </nav>
-    );
-  }
-
+  //     </nav>
+  //   );
+  // }
+if (mobile) {
+  return (
+    <nav className="mobile-bottom-nav d-flex justify-content-around align-items-center">
+      {menuItems.map((item) => (
+        <NavLink
+          key={item.path}
+          to={item.path}
+          end={item.path === "/"}
+          className={({ isActive }) =>
+            `mobile-nav-link text-decoration-none text-center ${
+              isActive ? "active" : ""
+            }`
+          }
+        >
+          <span className="mobile-nav-icon">{item.icon}</span>
+          <small>{item.shortTitle}</small>
+        </NavLink>
+      ))}
+    </nav>
+  );
+}
   /* =========================
      DESKTOP SIDEBAR
   ========================= */

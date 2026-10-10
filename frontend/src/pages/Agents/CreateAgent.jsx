@@ -30,6 +30,7 @@ const CreateAgent = () => {
       <AgentForm
         onSubmit={handleSubmit}
         loading={state.loading}
+         onCancel={() => navigate("/agents")}
         submitButtonText="Create Agent"
       />
 

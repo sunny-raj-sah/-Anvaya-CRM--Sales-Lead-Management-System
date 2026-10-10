@@ -11,6 +11,7 @@ const initialValues = {
 const AgentForm = ({
   initialData = initialValues,
   onSubmit,
+  onCancel,
   loading = false,
   submitButtonText = "Save Agent",
 }) => {
@@ -76,7 +77,15 @@ const AgentForm = ({
       </div>
 
       <div className="card-footer text-end">
-
+        <div className="card-footer d-flex justify-content-end gap-2">
+<Button
+  variant="secondary"
+    type="button"
+    onClick={onCancel}
+    disabled={loading}
+  >
+    Cancel
+  </Button>
         <Button
           type="submit"
           disabled={loading}
@@ -85,7 +94,7 @@ const AgentForm = ({
             ? "Saving..."
             : submitButtonText}
         </Button>
-
+</div>
       </div>
     </form>
   );

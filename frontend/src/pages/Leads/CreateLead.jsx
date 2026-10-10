@@ -26,7 +26,7 @@ const CreateLead = () => {
         title="Create Lead"
         subtitle="Add a new Lead"
       />
-
+ 
       <LeadForm
         salesAgents={state.salesAgents}
         onSubmit={handleSubmit}

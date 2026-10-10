@@ -199,26 +199,29 @@ console.log("Sales agents:", salesAgents);
 
       </div>
 
-      {/* <div className="card-footer text-end"> */}
-<div className="card-footer d-flex justify-content-end gap-2">
+      <div className="card-footer  ">
+<div className="d-flex flex-column flex-sm-row justify-content-end gap-2">
  <Button
   variant="secondary"
     type="button"
     onClick={onCancel}
     disabled={loading}
+  
   >
     Cancel
   </Button>
         <Button
           type="submit"
           disabled={loading}
+          
         >
           {loading
             ? "Saving..."
             :  submitButtonText}
+            
         </Button>
 </div>
-      {/* </div> */}
+      </div>
 
     </form>
   );

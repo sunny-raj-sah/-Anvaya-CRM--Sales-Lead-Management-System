@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
      <nav className="navbar navbar-expand-md bg-white border-bottom">
   <div className="container-fluid px-4">
-
+ 
     <Link
       to="/"
       className="navbar-brand text-dark fw-semibold"
@@ -66,3 +66,4 @@ const Navbar = () => {
 };
 
 export default Navbar;
+ 
