@@ -1,9 +1,100 @@
- .chart-container {
-  position: relative;
-  width: 100%;
-  height: 350px;
+ 
+/* Prevent flex children from expanding beyond the viewport */
+.min-w-0 {
+  min-width: 0;
 }
 
-.card {
-  height: 100%;
+/* Main content: leave room for mobile bottom navigation */
+.mobile-main-content {
+  min-width: 0;
+  padding-bottom: 1.5rem;
+}
+
+/* Mobile bottom navigation */
+.mobile-bottom-nav {
+  z-index: 1030;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+/* Report cards */
+.report-card {
+  min-width: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.report-card .card-header {
+  min-width: 0;
+}
+
+.report-card .card-header h2 {
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.report-card .card-body {
+  min-width: 0;
+}
+
+/* Doughnut chart */
+.pipeline-chart-container {
+  position: relative;
+  width: 100%;
+  height: 280px;
+  max-width: 100%;
+}
+
+/* Line chart */
+.line-chart-container {
+  position: relative;
+  width: 100%;
+  height: 260px;
+  max-width: 100%;
+}
+
+/* Agent bar chart */
+.agent-chart-container {
+  position: relative;
+  width: 100%;
+  max-width: 100%;
+}
+
+/* Empty chart state */
+.chart-empty-state {
+  min-height: 220px;
+  overflow-wrap: anywhere;
+}
+
+/* Tablet and smaller laptops */
+@media (max-width: 991.98px) {
+  .pipeline-chart-container {
+    height: 260px;
+  }
+
+  .line-chart-container {
+    height: 250px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 575.98px) {
+  .mobile-main-content {
+    padding-bottom: 5.5rem;
+  }
+
+  .pipeline-chart-container {
+    height: 250px;
+  }
+
+  .line-chart-container {
+    height: 230px;
+  }
+
+  .report-card .card-header {
+    padding: 0.75rem 1rem;
+  }
+
+  .report-card .card-body {
+    padding: 1rem;
+  }
 }
