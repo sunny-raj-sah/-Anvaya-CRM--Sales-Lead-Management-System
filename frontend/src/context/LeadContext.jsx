@@ -1,4 +1,4 @@
- import { createContext, useReducer } from "react";
+ import { createContext, useReducer,useEffect } from "react";
 
 import {
   leadReducer,
@@ -34,6 +34,7 @@ const LeadProvider = ({ children }) => {
     initialLeadState
   );
 
+  
   // ===========================
   // Get All Leads
   // ===========================
@@ -100,7 +101,9 @@ const LeadProvider = ({ children }) => {
     });
   }
 };
-
+useEffect(() => {
+  fetchAgents();
+}, []);
 // Add addAgent()
 
 const addAgent = async (agentData) => {

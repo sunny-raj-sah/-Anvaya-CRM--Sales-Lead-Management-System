@@ -16,6 +16,7 @@ const LeadForm = ({
   initialValues = leadInitialValues,
   salesAgents = [],
   onSubmit,
+   onCancel,
   loading = false,
     submitButtonText = "Save Lead",
 }) => {
@@ -61,7 +62,7 @@ const LeadForm = ({
 
   console.log("LeadForm initialValues:", initialValues);
 console.log("LeadForm formData:", formData);
-
+console.log("Sales agents:", salesAgents);
   return (
     <form
       onSubmit={handleSubmit}
@@ -198,8 +199,16 @@ console.log("LeadForm formData:", formData);
 
       </div>
 
-      <div className="card-footer text-end">
-
+      {/* <div className="card-footer text-end"> */}
+<div className="card-footer d-flex justify-content-end gap-2">
+ <Button
+  variant="secondary"
+    type="button"
+    onClick={onCancel}
+    disabled={loading}
+  >
+    Cancel
+  </Button>
         <Button
           type="submit"
           disabled={loading}
@@ -208,8 +217,8 @@ console.log("LeadForm formData:", formData);
             ? "Saving..."
             :  submitButtonText}
         </Button>
-
-      </div>
+</div>
+      {/* </div> */}
 
     </form>
   );

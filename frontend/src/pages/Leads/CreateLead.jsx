@@ -30,6 +30,7 @@ const CreateLead = () => {
       <LeadForm
         salesAgents={state.salesAgents}
         onSubmit={handleSubmit}
+         onCancel={() => navigate("/leads")}
         loading={state.loading}
       />
 
